@@ -1,5 +1,11 @@
 # The Rickest Citadel Database - Prueba Técnica: Generador de Documentación Interactiva Kushki
 
+**Codigo desplegado en Codesandbox:** [CodeSandbox-The Rickest Citadel Database](https://codesandbox.io/p/github/JexDev13/The-rickest-Citadel-Database/master)
+
+**Aplicacion desplegada en Vercel:** [The Rickest Citadel Database](https://the-rickest-citadel-database.vercel.app/)
+
+---
+
 Una aplicación web interactiva que consume la [Rick and Morty API](https://rickandmortyapi.com/) para explorar el universo de Rick y Morty, con generación de resúmenes de personajes potenciados por IA.
 
 ## 🚀 Features
@@ -158,12 +164,62 @@ Puedes importar y ejecutar este proyecto directamente en CodeSandbox:
 2. Haz clic en "Import from GitHub" o "Create Sandbox"
 3. Si el proyecto está en GitHub, pega la URL del repositorio
 4. CodeSandbox detectará automáticamente que es un proyecto Next.js
-5. Configura las variables de entorno:
-   - Ve a "Server Control Panel" en la barra lateral
-   - Añade `NEXT_PUBLIC_GEMINI_API_KEY` con tu API key
-6. El proyecto se ejecutará automáticamente
+5. **Configuración inicial automática**: En la mayoría de los casos, al abrir el enlace del sandbox, CodeSandbox ejecutará automáticamente el setup y mostrará la aplicación
 
-**Nota**: Asegúrate de configurar la variable de entorno `NEXT_PUBLIC_GEMINI_API_KEY` en la configuración del sandbox para que la funcionalidad de IA funcione correctamente.
+### 🚀 Ejecutar el Proyecto Manualmente en CodeSandbox
+
+Si el proyecto no se inicia automáticamente o necesitas reiniciarlo:
+
+1. **Ejecutar Setup Task**:
+   - En la barra superior, busca y haz clic en **"Run Setup Task"** o **"Tasks"**
+   - Esto instalará todas las dependencias necesarias (`npm install` y `npm install @google/generative-ai`)
+   - Espera a que termine la instalación (verás el progreso en la terminal integrada)
+
+2. **Visualizar la aplicación**:
+   - Una vez completada la instalación, busca el panel de **"Preview"** o **"Ports"**
+   - Haz clic en el puerto **3000** para ver la aplicación en ejecución
+   - Alternativamente, busca el botón de **"Open Browser"** o el ícono de navegador externo
+
+3. **Si no ves el puerto 3000 activo**:
+   - Ve al terminal integrado y ejecuta manualmente: `npm run dev`
+   - El servidor se iniciará en el puerto 3000
+   - Accede al preview haciendo clic en la URL que aparece en el terminal
+
+### 🔧 Configuración de Variables de Entorno en CodeSandbox
+
+Para que la funcionalidad de IA con Gemini funcione correctamente, debes configurar las variables de entorno:
+
+**Pasos para configurar las variables de entorno:**
+
+1. Una vez abierto tu sandbox, busca en la barra lateral izquierda el ícono de **"Server Control Panel"** (o presiona `Ctrl + Shift + X`)
+2. En el panel que se abre, busca la sección **"Env Variables"** o **"Environment"**
+3. Haz clic en **"+ Add Secret"** o **"Add Environment Variable"**
+4. Agrega las siguientes variables:
+   - **Nombre**: `GEMINI_API_KEY`
+   - **Valor**: Tu API key de Gemini (la que obtuviste de Google AI Studio)
+5. Haz clic en **"Save"** o **"Add"**
+6. **Recarga la página** de la aplicación para que los cambios surtan efecto
+
+### ⚠️ Solución de Problemas Comunes en CodeSandbox
+
+Si experimentas errores relacionados con la API de Gemini (como "API key inválida" o errores 500), puede deberse a:
+
+**1. Modo incógnito del navegador:**
+   - CodeSandbox puede tener problemas cargando variables de entorno en pestañas de incógnito
+   - **Solución**: Abre CodeSandbox en una ventana normal e ingresa con tus credenciales para poder configurar variables de entorno fuera de modo lectura (no incógnito)
+
+**2. Variables de entorno no configuradas o mal configuradas:**
+   - Las variables de entorno deben configurarse exactamente como se indica arriba
+   - **Solución**: Verifica que hayas agregado `GEMINI_API_KEY` con tu API key válida
+   - Asegúrate de no incluir espacios adicionales al pegar la API key
+   - Verifica que la API key sea válida en [Google AI Studio](https://makersuite.google.com/app/apikey)
+
+**3. Cambios no aplicados:**
+   - Después de agregar o modificar variables de entorno, CodeSandbox necesita reiniciarse
+   - **Solución**: Recarga completamente la página del sandbox (F5 o Ctrl + R)
+   - Si el problema persiste, reinicia el servidor desde el "Server Control Panel"
+
+**Nota importante**: Si continúas experimentando problemas, verifica que tu API key de Gemini esté activa y tenga cuota disponible en tu cuenta de Google Cloud.
 
 ## 🚀 Build para Producción
 
