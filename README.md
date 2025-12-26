@@ -130,18 +130,18 @@ Esta estructura separa las responsabilidades:
    
    ```env
    API_BASE_URL=https://rickandmortyapi.com/api/
-   NEXT_PUBLIC_HISTORY_STORAGE_KEY=rickmorty_history
-   NEXT_PUBLIC_GEMINI_API_KEY=your_gemini_api_key_here
+   HISTORY_STORAGE_KEY=rickmorty_history
+   GEMINI_API_KEY=your_gemini_api_key_here
    ```
    
    - Reemplaza `your_gemini_api_key_here` con la API key que obtuviste en el paso anterior
    
    **Descripción de las variables**:
    - `API_BASE_URL`: Define la dirección base para las peticiones de datos de la serie (personajes, locaciones, etc.).
-   - `NEXT_PUBLIC_HISTORY_STORAGE_KEY`: Es la llave utilizada para guardar y gestionar el historial de navegación.
-   - `NEXT_PUBLIC_GEMINI_API_KEY`: Es la credencial necesaria para habilitar las funciones de inteligencia artificial dentro de la base de datos de la Ciudadela.
+   - `HISTORY_STORAGE_KEY`: Es la llave utilizada para guardar y gestionar el historial de navegación.
+   - `GEMINI_API_KEY`: Es la credencial necesaria para habilitar las funciones de inteligencia artificial dentro de la base de datos de la Ciudadela.
 
-   **⚠️ Importante**: Las variables `API_BASE_URL` y `NEXT_PUBLIC_HISTORY_STORAGE_KEY` no deben alterarse, ya que se usan internamente para el correcto funcionamiento de la aplicación.
+   **⚠️ Importante**: Las variables `API_BASE_URL` y `HISTORY_STORAGE_KEY` no deben alterarse, ya que se usan internamente para el correcto funcionamiento de la aplicación.
 
    **⚠️ Importante**: Nunca subas tu archivo `.env.local` a un repositorio público.
 

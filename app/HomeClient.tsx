@@ -10,7 +10,7 @@ interface HomeProps {
 }
 
 export default function Home({ initialCharacters }: HomeProps) {
-  const HISTORY_STORAGE_KEY = process.env.NEXT_PUBLIC_HISTORY_STORAGE_KEY || 'rickmorty_history';
+  const HISTORY_STORAGE_KEY = process.env.HISTORY_STORAGE_KEY || 'rickmorty_history';
   const [history, setHistory] = useState<Character[]>([]);
   const [, setSelectedFromHistory] = useState<Character | null>(null);
   const [isHydrated, setIsHydrated] = useState(false);
@@ -31,7 +31,7 @@ export default function Home({ initialCharacters }: HomeProps) {
     };
     
     loadHistory();
-  }, []);
+  }, [HISTORY_STORAGE_KEY]);
 
   const handleAddToHistory = (character: Character) => {
     setHistory((prev) => {
